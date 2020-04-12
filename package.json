@@ -1,32 +1,19 @@
 {
     "name": "electron-typescript-guide",
     "version": "0.0.1",
-    "description": "",
+    "description": "This is a sample project for peoples, who want to start with Electron in combination with Typescript",
     "author": {
         "name": "Batajus"
     },
-    "main": "build/main.js",
-    "build": {
-        "files": [
-            "build",
-            "package.json"
-        ]
-    },
+    "main": "build/index.js",
     "scripts": {
-        "compile": "rimraf dist build && tsc && copyfiles -f src/index.html build",
-        "feature:compile": "rimraf dist && tsc --project tsconfig.feature.json && copyfiles -f src/index.html build",
-        "start": "npm run compile && electron .",
-        "feature:start": "npm run feature:compile && electron .",
-        "build": "npm run compile && electron-builder",
-        "feature:build": "npm run feature:compile && electron-builder"
+        "compile": "tsc && copyfiles -f src/index.html build",
+        "start": "npm run compile && electron ."
     },
-    "dependencies": {
-        "electron-log": "^3.0.7"
-    },
+    "dependencies": {},
     "devDependencies": {
         "copyfiles": "2.1.1",
         "electron": "6.0.0",
-        "electron-builder": "21.2.0",
         "typescript": "3.5.3"
     }
 }

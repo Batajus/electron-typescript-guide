@@ -1,5 +1,4 @@
-import { app, BrowserWindow, Notification, globalShortcut } from 'electron';
-import * as log from 'electron-log';
+import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 
 export class ElectronProject {
@@ -7,21 +6,20 @@ export class ElectronProject {
     private win: BrowserWindow;
 
     constructor() {
-        log.info('Starting...');
         this.win = new BrowserWindow({
-            webPreferences: {
-                nodeIntegration: true
-            }
+            width: 600,
+            height: 400
         });
+        this.init();
+    }
 
+    private init() {
         const indexHTML = path.join(__dirname + '/index.html');
         this.win.loadFile(indexHTML).then(() => {
 
             // IMPLEMENT FANCY STUFF HERE
 
-        }).catch(e => log.error(e));
-
-
+        }).catch(e => console.error(e));
     }
 
 }
@@ -31,4 +29,3 @@ let project: ElectronProject;
 app.on('ready', () => {
     project = new ElectronProject();
 });
-

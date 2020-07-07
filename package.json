@@ -13,7 +13,7 @@
     "dependencies": {},
     "devDependencies": {
         "copyfiles": "2.1.1",
-        "electron": "6.0.0",
+        "electron": "9.1.0",
         "typescript": "3.5.3"
     }
 }

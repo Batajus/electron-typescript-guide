@@ -1,5 +1,5 @@
 # electron-typescript-guide
-A simple project to introduce you to Electron in combination with Typescript.
+A sample project to introduce you to Electron in combination with Typescript.
 
 ## How to start
 
